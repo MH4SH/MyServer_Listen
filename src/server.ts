@@ -9,10 +9,7 @@ dotenv.config();
 
 const portOfApplication = process.env.PORT || 4404;
 
-import app from './app';
-app.set("port", portOfApplication);
-
-let server = new Server(app);
+let server = new Server();
 
 import socker from './socker';
 socker(server);

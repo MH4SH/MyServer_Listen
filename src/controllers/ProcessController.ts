@@ -1,5 +1,4 @@
 import pm2, {ProcessDescription} from 'pm2';
-
 import getProcess, {Process} from '../services/getProcess';
 
 const ProcessController = {
