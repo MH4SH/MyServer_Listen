@@ -1,15 +1,18 @@
 import {Server} from "http";
 import ProcessController from '../controllers/ProcessController';
 import socketio, { Socket } from "socket.io";
+import {verifySocker, SocketAuth} from '../middlewares/auth';
+
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJpYXQiOjE1OTc1Nzc3NDcsImV4cCI6MTU5NzY2NDE0N30.m0mkDMJZlf1EpJ6DBH-gJtidCYiaWfbPvz8uibjlur4
 //https://medium.com/swlh/socket-io-games-the-right-way-using-nodejs-and-react-not-a-chat-app-part-1-e7a49d2f3f51
-const ProcessSocker = (server: Server) => {
+export default (server: Server) => {
     const io = socketio.listen(server, {
         path: '/socket/process'
     });
 
     console.log('Started listening!');
 
-    io.on("connection", function(socket: Socket) {
+    io.use(verifySocker).on("connection", (socket: SocketAuth) => {
 
         console.info(`Client entrou [id=${socket.id}]`);
 
@@ -57,6 +60,3 @@ const ProcessSocker = (server: Server) => {
         });
     });
 }
-
-
-export default ProcessSocker;

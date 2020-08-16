@@ -9,7 +9,7 @@ const MonitSocker = (server: Server) => {
 
     console.log('Started monit listening!');
 
-    io.on("connection", function(socket: any) {
+    io.on("connection", (socket: any) => {
         let monitInterval: any;
 
         console.info(`Client entrou [id=${socket.id}]`);
