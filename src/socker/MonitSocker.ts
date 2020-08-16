@@ -1,6 +1,7 @@
 import {Server} from "http";
 import MonitController from '../controllers/MonitController';
 import socketio, { Socket } from "socket.io";
+import {verifySocker, SocketAuth} from '../middlewares/auth';
 
 const MonitSocker = (server: Server) => {
     const io = socketio.listen(server, {
@@ -9,7 +10,7 @@ const MonitSocker = (server: Server) => {
 
     console.log('Started monit listening!');
 
-    io.on("connection", (socket: any) => {
+    io.use(verifySocker).on("connection", (socket: any) => {
         let monitInterval: any;
 
         console.info(`Client entrou [id=${socket.id}]`);
