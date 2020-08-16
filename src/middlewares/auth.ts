@@ -66,20 +66,10 @@ export const verifySocker = (socket: SocketAuth, next: Function) => {
         if(!socket.handshake.query)
             throw {statusCode: 401, error: "Unauthorized", message: "No token provided"}
 
-        let authHeader = socket.handshake.query.token;
+        let token = socket.handshake.query.token;
 
-        if(!authHeader)
+        if(!token)
             throw {statusCode: 401, error: "Unauthorized", message: "No token provided"}
-
-        const parts = authHeader.split(' ');
-
-        if(parts.length !== 2)
-            throw {statusCode: 401, error: "Unauthorized", message: "Token error"}
-
-        const [scheme, token] = parts;
-
-        if(!/Bearer$/i.test(scheme))
-            throw {statusCode: 401, error: "Unauthorized", message: "Token malformatted"}
 
         jwt.verify(token, process.env.HASH_1_SECRET as string, (err: any, decoded: any) => {
             if(err)
