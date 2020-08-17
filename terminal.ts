@@ -1,6 +1,6 @@
-const shell = require('shelljs');
+//const shell = require('shelljs');
 
-shell.exec('yarn add sms');
+//shell.exec('yarn add sms');
 
 
 /**
