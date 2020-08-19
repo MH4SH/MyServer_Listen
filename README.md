@@ -25,7 +25,7 @@
   Esta versão do projeto é responsável por controlar diretamente os processos, de efetuar as atualizações e iniciar novos processos em um servidor que utiliza o PM2.
 
   ## :computer: Instalação
-  Em breve teremos processo de instalação deste listen em seu repositório.
+  Em breve teremos um processo de instalação deste listen para seu servidor.
 
   ****
   Esse projeto está sob a licença GPL 3.0. Veja o arquivo [LICENSE][license-link] para mais detalhes.
