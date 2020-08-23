@@ -35,10 +35,6 @@
   [listen-image]: https://i.ibb.co/fvpvx93/Database-1.png
   [license-image]: https://img.shields.io/badge/License-GPL%203.0-yellow.svg
   [license-link]: /LICENSE
-  [repo-backedn]: https://github.com/marconwillian/BeTheHero_backend
-  [repo-mobile]: https://github.com/marconwillian/BeTheHero_mobile
   [typescript]: https://yarnpkg.com/package/typescript
   [socket-io]: https://yarnpkg.com/package/socket.io
   [pm2]: https://yarnpkg.com/package/pm2
-  [npm-react-router-dom]: https://yarnpkg.com/package/react-router-dom
-  [npm-axios]: https://yarnpkg.com/package/axios
